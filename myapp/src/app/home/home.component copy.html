@@ -1,0 +1,38 @@
+<h1>Welcome!</h1>
+
+<div class="play-container">
+    <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p> 
+    <!--This is Event binding with 'click' event and the function must be present in the component
+    Also the bind data {{ clickCounter }} is from the component
+    -->
+</div>
+
+<div class="play-container">
+    <p>
+        <input type="text" [(ngModel)]="name"><br>
+        <strong>You said: </strong> {{ name }}
+    </p>
+</div>
+
+<div class="play-container">
+    <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none"> <!-- clickCounter is the property in component -->
+        <p>The click counter <strong>IS GREATER</strong> than 4.</p>
+    </ng-template>
+
+    <ng-template #none> <!--#none is the local reference-->
+        <p>The click counter is <strong>not greater</strong> than 4.</p>
+    </ng-template>
+</div>
+
+<!--Style Binding-->
+<div class="play-container" [style.background-color]="clickCounter > 4 ? 'yellow' : 'lightgray'"></div>
+
+<div class="play-container" [ngStyle]="{
+    'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
+    'border':           clickCounter > 4 ? '4px solid black' : 'none'}
+">
+
+<!--Class Binding-->
+<div class="play-container" [class.active]="clickCounter > 4"></div>
+
+<div class="play-container" [ngClass]="setClasses()"></div>

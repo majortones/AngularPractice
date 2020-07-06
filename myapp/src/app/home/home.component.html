@@ -1,0 +1,18 @@
+<h1>Welcome!</h1>
+
+<div class="play-container">
+    <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p> 
+    <!--This is Event binding with 'click' event and the function must be present in the component
+    Also the bind data {{ clickCounter }} is from the component
+    -->
+</div>
+
+<div class="play-container">
+    <p>
+        <input type="text" [(ngModel)]="name"><br>
+        <strong>You said: </strong> {{ name }}
+    </p>
+</div>
+
+<!--Class Binding-->
+<div class="play-container" [ngClass]="setClasses()"></div>

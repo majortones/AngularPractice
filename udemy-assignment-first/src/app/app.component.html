@@ -1,0 +1,19 @@
+<h1>Welcome to assignment</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="hideUnhide()">Display Details</button>
+      <br>
+
+      <p *ngIf="isHidden">
+        Secret Password = tuna
+      </p>
+      <div *ngIf="counter !=0">Clicked Count :
+        <div *ngFor="let item of clickedTimes" [ngStyle]="{backgroundColor: applyBackground()}"
+          [ngClass]="{specialTxtColor: counter > 5}">{{item}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

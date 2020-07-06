@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h1>Welcome to game tester</h1>
+  <br>
+  <div class="row">
+    <app-game-control (gameEmitter) = "createNumbersWithEvent($event)"></app-game-control> <!-- Custom event binding from component app-game-control -->
+  </div>
+  <div class="row">
+    <p>Even Number
+    <app-even *ngFor="let even of evenNums" [evenNumber]="even"></app-even> <!-- Property binding in component app-even -->
+  </div>
+  <div class="row">
+    <p>Odd Number
+    <app-odd *ngFor="let odd of oddNums" [oddNumber]="odd"></app-odd>
+  </div>
+
+</div>
