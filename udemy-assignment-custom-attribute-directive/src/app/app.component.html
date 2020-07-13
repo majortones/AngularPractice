@@ -1,0 +1,12 @@
+
+<div class="container">
+  <h1>Welcome!</h1>
+  <div class="row">
+    <button class="btn btn-primary" (click)="isOdd = !isOdd">Click Me</button>
+  </div>
+  <div class="row">
+    <br>
+    <app-sampleflag [ngStyle]="{backgroundColor : isOdd ? 'green' : 'red'}"></app-sampleflag>
+  </div>
+
+</div>
